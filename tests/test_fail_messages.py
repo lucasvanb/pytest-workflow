@@ -102,15 +102,6 @@ FAILURE_MESSAGE_TESTS: List[Tuple[str, str]] = [
      "'No arguments?' was not found in 'fail_test': stderr "
      "while it should be there"),
     ("""\
-    - name: fail_test
-      command: grep
-      stderr:
-        must_not_contain:
-          - "grep --help"
-    """,
-     "'grep --help' was found in 'fail_test': stderr while "
-     "it should not be there"),
-    ("""\
     - name: simple echo
       command: "echo Hello, world"
       stdout:
